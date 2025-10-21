@@ -5,6 +5,7 @@ import projeto.com.br.feedback.repository.SugestaoRepository;
 
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class SugestaoService {
@@ -24,5 +25,9 @@ public class SugestaoService {
                 .build();
 
         return sugestaoRepository.save(sugestao);
+    }
+
+    public List<Sugestao> listarSugestoes(String titulo) {
+        return sugestaoRepository.findByTituloContainingOrderByDataAtualizacaoDesc(titulo);
     }
 }
