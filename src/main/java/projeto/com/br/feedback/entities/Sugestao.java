@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -26,4 +27,8 @@ public class Sugestao {
     private LocalDateTime dataEnvio;
 
     private LocalDateTime dataAtualização;
+
+    @OneToMany(mappedBy = "sugestao", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OrderBy("dataEnvio DESC")
+    private List<Comentario> comentarios;
 }

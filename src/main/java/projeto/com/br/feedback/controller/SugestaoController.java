@@ -31,4 +31,11 @@ public class SugestaoController {
     public List<Sugestao> buscarSugestoes (@RequestParam(required = false) String titulo) {
         return sugestaoService.listarSugestoes(titulo);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Sugestao> buscarSugestaoPorId(@PathVariable Long id) {
+        return sugestaoService.buscarPorId(id)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
 }
