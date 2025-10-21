@@ -1,7 +1,6 @@
 package projeto.com.br.feedback.entities;
 
 import jakarta.persistence.*;
-import jdk.jfr.DataAmount;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
