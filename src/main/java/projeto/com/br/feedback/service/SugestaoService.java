@@ -22,7 +22,7 @@ public class SugestaoService {
                 .titulo(titulo)
                 .descrição(descricao)
                 .dataEnvio(LocalDateTime.now())
-                .dataAtualização(LocalDateTime.now())
+                .dataAtualizacao(LocalDateTime.now())
                 .build();
 
         return sugestaoRepository.save(sugestao);

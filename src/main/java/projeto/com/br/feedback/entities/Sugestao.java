@@ -26,7 +26,8 @@ public class Sugestao {
 
     private LocalDateTime dataEnvio;
 
-    private LocalDateTime dataAtualização;
+    @Column(name = "data_atualizacao")
+    private LocalDateTime dataAtualizacao;
 
     @OneToMany(mappedBy = "sugestao", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OrderBy("dataEnvio DESC")

@@ -38,7 +38,7 @@ public class ComentarioService {
                 .dataEnvio(LocalDateTime.now())
                 .build();
 
-        sugestao.setDataAtualização(LocalDateTime.now());
+        sugestao.setDataAtualizacao(LocalDateTime.now());
 
         sugestaoRepository.save(sugestao); // Atualiza dataAtualizacao
         Comentario salvo = comentarioRepository.save(comentario);
